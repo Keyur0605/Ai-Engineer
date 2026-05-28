@@ -112,39 +112,93 @@
 # new_list = [(idx, value) for idx, value in enumerate(list1)]
 # print(new_list)
 
-# Exercise 1
-name = input("Enter your name: ")
-age = int(input("Enter your age: "))
-height = float(input("Enter your height in cm: "))
-weight = float(input("Enter your weight in kg: "))
-bmi = weight / (height / 100) ** 2
 
-print("--- Info Card ---")
-print(f"Name: {name}")
-print(f"Age: {age}")
-print(f"Height: {height} cm")
-print(f"Weight: {weight} kg")
-print(f"BMI: {bmi:.2f}")
+# # day 1 python exercises
+# # Exercise 1
+# name = input("Enter your name: ")
+# age = int(input("Enter your age: "))
+# height = float(input("Enter your height in cm: "))
+# weight = float(input("Enter your weight in kg: "))
+# bmi = weight / (height / 100) ** 2
 
-# Exercise 2
-second = int(input("Enter the number of seconds: "))
-days = second // (24 * 3600)
-hours = (second % (24 * 3600)) // 3600
-minutes = (second % 3600) // 60
-seconds = second % 60
-print(f"{second} seconds is equal to {days} days, {hours} hours, {minutes} minutes, and {seconds} seconds.")
+# print("--- Info Card ---")
+# print(f"Name: {name}")
+# print(f"Age: {age}")
+# print(f"Height: {height} cm")
+# print(f"Weight: {weight} kg")
+# print(f"BMI: {bmi:.2f}")
 
-# Exercise 3
+# # Exercise 2
+# second = int(input("Enter the number of seconds: "))
+# days = second // (24 * 3600)
+# hours = (second % (24 * 3600)) // 3600
+# minutes = (second % 3600) // 60
+# seconds = second % 60
+# print(f"{second} seconds is equal to {days} days, {hours} hours, {minutes} minutes, and {seconds} seconds.")
+
+# # Exercise 3
+# try:
+
+#     degree_celsius = float(input("Enter temperature in Celsius: "))
+#     degree_fahrenheit = (degree_celsius * 9/5) + 32
+#     degree_kelvin = degree_celsius + 273.15
+#     print(f"{degree_celsius}°C is equal to {degree_fahrenheit:.2f}°F and {degree_kelvin:.2f} K.")
+
+#     euro = float(input("Enter amount in Euros: "))
+#     GBP = euro * 0.85
+#     USD = euro * 1.1
+#     print(f"{euro} Euros is equal to {GBP:.2f} GBP and {USD:.2f} USD.")
+# except ValueError:
+#     print("Invalid input. Please enter a valid number.")
+
+# # day 2 python exercises
+
+# exercise 1 = Shopping bill splitter
 try:
 
-    degree_celsius = float(input("Enter temperature in Celsius: "))
-    degree_fahrenheit = (degree_celsius * 9/5) + 32
-    degree_kelvin = degree_celsius + 273.15
-    print(f"{degree_celsius}°C is equal to {degree_fahrenheit:.2f}°F and {degree_kelvin:.2f} K.")
-
-    euro = float(input("Enter amount in Euros: "))
-    GBP = euro * 0.85
-    USD = euro * 1.1
-    print(f"{euro} Euros is equal to {GBP:.2f} GBP and {USD:.2f} USD.")
+    total_bill = float(input("Enter the total bill amount: "))
+    discount = int(input("Enter the discount percentage (0-100): "))
+    members = int(input("Enter the number of members sharing the bill: "))
+    total_after_discount = total_bill - (total_bill * (discount / 100))
+    print(f"The total bill after discount is: {total_after_discount:.2f}")
+    if members > 0:
+        bill_per_member = total_after_discount / members
+        print(f"Each member should pay: {bill_per_member:.2f}")
+        if bill_per_member > 20:
+            print(f"Above each 20 Euro : {bill_per_member > 20}")
+    else:
+        print("Number of members must be greater than 0.")
 except ValueError:
-    print("Invalid input. Please enter a valid number.")
+    print("Invalid input. Please enter a valid number.")   
+
+# # exercise 2 = leap year checker and even or odd year checker
+try: 
+    year = int(input ("Enter a year: "))
+    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+        print(f"{year} is a leap year.")
+    else:
+        print(f"{year} is not a leap year.")
+    if year % 2 == 0:
+        print(f"{year} is an even year.")
+    else:
+        print(f"{year} is an odd year.")
+except ValueError:
+    print("Invalid input. Please enter a valid year.")
+
+# execise 3 loan interest calculator
+loan_amount = float(input("Enter the loan amount: "))
+annual_interest_rate = float(input("Enter the annual interest rate (in %): "))
+loan_term_years = int(input("Enter the loan term (in years): "))
+
+simple_interest = (loan_amount * annual_interest_rate * loan_term_years) / 100
+total_amount = loan_amount + simple_interest
+compound_interest = loan_amount * (1 + annual_interest_rate / 100) ** loan_term_years - loan_amount
+compound_total_amount = loan_amount + compound_interest
+
+print("--- Loan Simple Interest Calculation ---")
+print(f"Simple Interest: {simple_interest:.2f}")
+print(f"Total Amount with Simple Interest: {total_amount:.2f}")
+
+print("\n--- Loan Compound Interest Calculation ---")
+print(f"Compound Interest: {compound_interest:.2f}")
+print(f"Total Amount with Compound Interest: {compound_total_amount:.2f}")
