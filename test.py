@@ -260,33 +260,33 @@
 
 # exercise 3 = smart shopping list manager
 
-item_weights = int(input("Enter the items weights(kg): "))
-destination= input("Enter the destination(domestic/international): ").strip().lower()
-member  = input("Enter the member status premium (yes/no): ").strip().lower()
-cost  = 0
-discount = 0 
-if destination not in ["domestic", "international"] and member not in ["yes", "no"]:
-    print("Invalid input for destination or member status. Please enter valid values.")
-else:
-    if destination == "domestic":
-        if item_weights <= 1:
-            cost = 3 * 0.25
-        elif item_weights <= 5:
-            cost = 6
-        else:
-            cost = 10
-    else:  # international
-        if item_weights <= 1:
-            cost = 10
-        elif item_weights <= 5:
-            cost = 20
-        else:
-            cost = 35
+# item_weights = int(input("Enter the items weights(kg): "))
+# destination= input("Enter the destination(domestic/international): ").strip().lower()
+# member  = input("Enter the member status premium (yes/no): ").strip().lower()
+# cost  = 0
+# discount = 0 
+# if destination not in ["domestic", "international"] and member not in ["yes", "no"]:
+#     print("Invalid input for destination or member status. Please enter valid values.")
+# else:
+#     if destination == "domestic":
+#         if item_weights <= 1:
+#             cost = 3 * 0.25
+#         elif item_weights <= 5:
+#             cost = 6
+#         else:
+#             cost = 10
+#     else:  # international
+#         if item_weights <= 1:
+#             cost = 10
+#         elif item_weights <= 5:
+#             cost = 20
+#         else:
+#             cost = 35
         
-    if member == "yes":
-        discount = cost * 0.25  # Apply 25% discount for premium members
+#     if member == "yes":
+#         discount = cost * 0.25  # Apply 25% discount for premium members
 
-print(f"Base price: {cost :.2f} Euros.")
-print(f"Discount: {discount:.2f} Euros.")
-print(f"The total shipping cost is: {cost - discount:.2f} Euros.")
-print("Thank you for using our smart shopping list manager!")
+# print(f"Base price: {cost :.2f} Euros.")
+# print(f"Discount: {discount:.2f} Euros.")
+# print(f"The total shipping cost is: {cost - discount:.2f} Euros.")
+# print("Thank you for using our smart shopping list manager!")
