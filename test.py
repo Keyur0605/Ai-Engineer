@@ -154,51 +154,139 @@
 # # day 2 python exercises
 
 # exercise 1 = Shopping bill splitter
-try:
+# try:
 
-    total_bill = float(input("Enter the total bill amount: "))
-    discount = int(input("Enter the discount percentage (0-100): "))
-    members = int(input("Enter the number of members sharing the bill: "))
-    total_after_discount = total_bill - (total_bill * (discount / 100))
-    print(f"The total bill after discount is: {total_after_discount:.2f}")
-    if members > 0:
-        bill_per_member = total_after_discount / members
-        print(f"Each member should pay: {bill_per_member:.2f}")
-        if bill_per_member > 20:
-            print(f"Above each 20 Euro : {bill_per_member > 20}")
-    else:
-        print("Number of members must be greater than 0.")
-except ValueError:
-    print("Invalid input. Please enter a valid number.")   
+#     total_bill = float(input("Enter the total bill amount: "))
+#     discount = int(input("Enter the discount percentage (0-100): "))
+#     members = int(input("Enter the number of members sharing the bill: "))
+#     total_after_discount = total_bill - (total_bill * (discount / 100))
+#     print(f"The total bill after discount is: {total_after_discount:.2f}")
+#     if members > 0:
+#         bill_per_member = total_after_discount / members
+#         print(f"Each member should pay: {bill_per_member:.2f}")
+#         if bill_per_member > 20:
+#             print(f"Above each 20 Euro : {bill_per_member > 20}")
+#     else:
+#         print("Number of members must be greater than 0.")
+# except ValueError:
+#     print("Invalid input. Please enter a valid number.")   
 
-# # exercise 2 = leap year checker and even or odd year checker
-try: 
-    year = int(input ("Enter a year: "))
-    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
-        print(f"{year} is a leap year.")
-    else:
-        print(f"{year} is not a leap year.")
-    if year % 2 == 0:
-        print(f"{year} is an even year.")
-    else:
-        print(f"{year} is an odd year.")
-except ValueError:
-    print("Invalid input. Please enter a valid year.")
+# # # exercise 2 = leap year checker and even or odd year checker
+# try: 
+#     year = int(input ("Enter a year: "))
+#     if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+#         print(f"{year} is a leap year.")
+#     else:
+#         print(f"{year} is not a leap year.")
+#     if year % 2 == 0:
+#         print(f"{year} is an even year.")
+#     else:
+#         print(f"{year} is an odd year.")
+# except ValueError:
+#     print("Invalid input. Please enter a valid year.")
 
-# execise 3 loan interest calculator
-loan_amount = float(input("Enter the loan amount: "))
-annual_interest_rate = float(input("Enter the annual interest rate (in %): "))
-loan_term_years = int(input("Enter the loan term (in years): "))
+# # execise 3 loan interest calculator
+# loan_amount = float(input("Enter the loan amount: "))
+# annual_interest_rate = float(input("Enter the annual interest rate (in %): "))
+# loan_term_years = int(input("Enter the loan term (in years): "))
 
-simple_interest = (loan_amount * annual_interest_rate * loan_term_years) / 100
-total_amount = loan_amount + simple_interest
-compound_interest = loan_amount * (1 + annual_interest_rate / 100) ** loan_term_years - loan_amount
-compound_total_amount = loan_amount + compound_interest
+# simple_interest = (loan_amount * annual_interest_rate * loan_term_years) / 100
+# total_amount = loan_amount + simple_interest
+# compound_interest = loan_amount * (1 + annual_interest_rate / 100) ** loan_term_years - loan_amount
+# compound_total_amount = loan_amount + compound_interest
 
-print("--- Loan Simple Interest Calculation ---")
-print(f"Simple Interest: {simple_interest:.2f}")
-print(f"Total Amount with Simple Interest: {total_amount:.2f}")
+# print("--- Loan Simple Interest Calculation ---")
+# print(f"Simple Interest: {simple_interest:.2f}")
+# print(f"Total Amount with Simple Interest: {total_amount:.2f}")
 
-print("\n--- Loan Compound Interest Calculation ---")
-print(f"Compound Interest: {compound_interest:.2f}")
-print(f"Total Amount with Compound Interest: {compound_total_amount:.2f}")
+# print("\n--- Loan Compound Interest Calculation ---")
+# print(f"Compound Interest: {compound_interest:.2f}")
+# print(f"Total Amount with Compound Interest: {compound_total_amount:.2f}")
+
+
+# Day 3 python exercises
+
+# Excercise 1 = cinema ticket price calculator
+# age = int(input("Enter your age: "))
+# day = input("Enter the day of the week (e.g., Monday, Tuesday, etc.): ").strip().lower()
+# try:
+#     age = int(age)
+#     if day not in ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]:
+#         print("Invalid input for day. Please enter a valid day of the week.")
+#     else:
+#         if 5 <= age <= 12:
+#             print("The cinema ticket price is: 5 Euros.")
+#         elif 13 <= age <= 17:
+#             print("The cinema ticket price is: 8 Euros.")
+#         elif 18 <= age <= 64:
+#             if day in ["saturday", "sunday"]:
+#                 print("The cinema ticket price is: 15 Euros.")
+#             else:
+#                 print("The cinema ticket price is: 12 Euros.")
+#         elif age >= 65:
+#             print("The cinema ticket price is: 6 Euros.")
+#         else:
+#             print("The cinema ticket price is: 0 Euros.")
+# except ValueError:
+#     print("Invalid input for age. Please enter a valid number.")
+#     exit()
+
+# exercise 2 = login system 
+
+# CORRECT_USERNAME = "admin"
+# CORRECT_PASSWORD = "secret123"
+# total_attempts = 3
+# try:
+#     while total_attempts > 0:
+#         username = input("Enter your username: ")
+#         password = input("Enter your password: ").strip()
+#         if username == CORRECT_USERNAME and password == CORRECT_PASSWORD:
+#             print("Login successful!")
+#             break
+#         elif username != CORRECT_USERNAME :
+#             total_attempts -= 1
+#             print(f"Invalid username. You have {total_attempts} attempts left.,..........")
+#         else:
+#             total_attempts -= 1
+#             print(f"Invalid password. You have {total_attempts} attempts left.,..........")
+#     if total_attempts == 0:
+#         print("Too many failed attempts. Your account has been locked.")      
+            
+# except ValueError:
+#     print("Invalid input. Please enter a valid username and password.")
+# except Exception as e:
+#     print(f"An error occurred: {e}")
+
+
+# exercise 3 = smart shopping list manager
+
+item_weights = int(input("Enter the items weights(kg): "))
+destination= input("Enter the destination(domestic/international): ").strip().lower()
+member  = input("Enter the member status premium (yes/no): ").strip().lower()
+cost  = 0
+discount = 0 
+if destination not in ["domestic", "international"] and member not in ["yes", "no"]:
+    print("Invalid input for destination or member status. Please enter valid values.")
+else:
+    if destination == "domestic":
+        if item_weights <= 1:
+            cost = 3 * 0.25
+        elif item_weights <= 5:
+            cost = 6
+        else:
+            cost = 10
+    else:  # international
+        if item_weights <= 1:
+            cost = 10
+        elif item_weights <= 5:
+            cost = 20
+        else:
+            cost = 35
+        
+    if member == "yes":
+        discount = cost * 0.25  # Apply 25% discount for premium members
+
+print(f"Base price: {cost :.2f} Euros.")
+print(f"Discount: {discount:.2f} Euros.")
+print(f"The total shipping cost is: {cost - discount:.2f} Euros.")
+print("Thank you for using our smart shopping list manager!")
