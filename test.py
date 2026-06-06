@@ -290,3 +290,68 @@
 # print(f"Discount: {discount:.2f} Euros.")
 # print(f"The total shipping cost is: {cost - discount:.2f} Euros.")
 # print("Thank you for using our smart shopping list manager!")
+
+# day4 python exercises
+
+# Exercise 1 = multiplication table generator
+# for i in range(1,11):
+#     for j in range(1,11):
+#         print(f'{j} x {i} = {i*j}',end = '\t')
+#     print()
+
+# Exercise 2 = number classification with loops
+# user = int(input("Enter a number: "))
+# total_move = 0
+# for i in range(1, user+1):
+#     if i % 7 == 0:
+#         print("Found a multiple of 7, stopping the loop.")
+#         break
+#     elif i % 3 == 0:
+#         continue
+#     else:
+#         total_move += 1
+#         print(f"Move {total_move}: {i} - printed")
+# else:
+#     print("Loop completed without finding a multiple of 7.")
+#     print(f"Total moves: {total_move}") 
+
+# Exercise 3 = atm pin
+
+# CORRECT_PIN = "4521"
+# total_attempts = 3
+
+# while total_attempts > 0:
+#     pin = input("Enter your 4-digit PIN: ").strip()
+#     if pin == CORRECT_PIN:
+#         print("PIN accepted. Access granted.")
+#         break
+#     elif sorted(pin) == sorted(CORRECT_PIN):
+#         print("Digit order is incorrect, but PIN is correct.")
+#     else:
+#         print("Incorrect PIN.")
+#     total_attempts -= 1
+#     print(f"You have {total_attempts} attempts left.")
+
+# else:
+#     print("Too many failed attempts. Your account has been locked.")
+
+# Exercise 4 = prime number checker and pattern generator
+
+# n = int(input("Enter n (1-9): "))
+
+# for i in range(1, n + 1):
+#     print("* " * i)
+
+# for i in range(n, 0, -1):
+#     print("* " * i)
+
+# start = int(input("Enter the starting number: "))
+# end = int(input("Enter the ending number: "))
+
+# for num in range(start, end + 1):
+#     if num > 1:
+#         for i in range(2, int(num**0.5) + 1):
+#             if num % i == 0:
+#                 break
+#         else:
+#             print(f"{num} is a prime number.")
